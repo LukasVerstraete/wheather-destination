@@ -1,2 +1,2 @@
 #!/bin/sh
-java -jar /usr/local/licensingservice/@project.build.finalName@.jar
+java -jar /usr/local/destination/@project.build.finalName@.jar
