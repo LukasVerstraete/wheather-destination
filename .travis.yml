@@ -1,3 +1,6 @@
+sudo: required
+services:
+- docker
 language: java
 cache:
     directories:
@@ -5,4 +8,6 @@ cache:
 jdk:
 - oraclejdk8
 script:
-- mvn clean package
+- docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+- mvn clean package docker:build
+- docker push lukasverstraete/weather-destination
